@@ -11,5 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.js('resources/js/app.js', 'public/dist/js')
+   .combine([
+        'node_modules/element-ui/lib/theme-chalk/index.css',
+        'public/dist/css/main.css'
+    ],'public/dist/css/app.css')

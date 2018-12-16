@@ -7,7 +7,13 @@
 
 require('./bootstrap');
 
+import router from './routes';
 window.Vue = require('vue');
+
+import ElementUI from 'element-ui';
+import locale from 'element-ui/lib/locale/lang/en';
+
+import Layout from './components/Layout.vue';
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,5 +35,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router,
+    components: {
+        Layout
+    },
 });
